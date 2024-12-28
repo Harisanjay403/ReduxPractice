@@ -9,6 +9,11 @@ export const Counter = () =>{
     const [incrementTo,setIncrementTo]=useState(0)
     const toBeNumber=Number(incrementTo) || 0
 
+    const resetAll = () =>{
+        dispatch(reset())
+        setIncrementTo(0)
+    }
+
     return(
         <section>
             <p>{count}</p> 
@@ -22,7 +27,7 @@ export const Counter = () =>{
                      
                     />
                 <button onClick={()=>dispatch(addValue(toBeNumber))}>Add value</button><br />
-                <button onClick={()=>(dispatch(reset()))}>Reset</button>
+                <button onClick={resetAll}>Reset</button>
             </div>
         </section>
     )
